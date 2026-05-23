@@ -14,6 +14,11 @@ RUN apt-get update && \
 # Install production dependencies
 RUN npm install --production
 
+# Create fallback nested backend path for platforms that run 'node backend/server.js' from /app/backend
+RUN mkdir -p /app/backend/backend && \
+	cp /app/server.js /app/backend/backend/server.js || true && \
+	cp /app/database.js /app/backend/backend/database.js || true
+
 # Set environment
 ENV NODE_ENV=production
 ENV PORT=5000
