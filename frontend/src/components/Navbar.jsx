@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { CarFront, LogOut, LayoutDashboard, MapPin } from 'lucide-react';
+import { CarFront, LogOut, LayoutDashboard } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -23,10 +23,7 @@ const Navbar = () => {
                         {user.role === 'admin' ? (
                             <Link to="/admin"><LayoutDashboard size={18} /> Admin</Link>
                         ) : (
-                            <>
-                                <Link to="/locations"><MapPin size={18} /> Locations</Link>
-                                <Link to="/dashboard"><LayoutDashboard size={18} /> Dashboard</Link>
-                            </>
+                            <Link to="/dashboard"><LayoutDashboard size={18} /> Dashboard</Link>
                         )}
                         <button className="btn btn-outline" onClick={handleLogout} style={{ padding: '0.4rem 1rem' }}>
                             <LogOut size={16} /> Logout

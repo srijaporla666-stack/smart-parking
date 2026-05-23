@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Locations from './pages/Locations';
 import AdminDashboard from './pages/AdminDashboard';
 import Booking from './pages/Booking';
 
@@ -26,9 +25,9 @@ function App() {
                         <Route path="/" element={<Navigate to="/login" />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/locations" element={
+                        <Route path="/dashboard" element={
                             <ProtectedRoute>
-                                <Locations />
+                                <Dashboard />
                             </ProtectedRoute>
                         } />
                         <Route path="/dashboard" element={
