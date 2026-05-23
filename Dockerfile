@@ -2,14 +2,13 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy backend files
-COPY backend/package*.json ./backend/
-COPY backend/server.js ./backend/
-COPY backend/database.js ./backend/
-COPY backend/schema.sql ./backend/
+# Copy backend files only
+COPY backend/package*.json ./
+COPY backend/server.js ./
+COPY backend/database.js ./
+COPY backend/schema.sql ./
 
-# Install backend dependencies
-WORKDIR /app/backend
+# Install dependencies
 RUN npm install
 
 # Set environment
@@ -18,4 +17,4 @@ ENV PORT=5000
 
 EXPOSE 5000
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
