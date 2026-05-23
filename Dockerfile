@@ -8,7 +8,7 @@ COPY backend/ ./
 
 # Install OS-level build tools required for native modules (sqlite3)
 RUN apt-get update && \
-	apt-get install -y python3 build-essential make g++ pkg-config && \
+	apt-get install -y python3 build-essential make g++ pkg-config libsqlite3-dev && \
 	rm -rf /var/lib/apt/lists/*
 
 # Force npm to build native modules from source inside this container
