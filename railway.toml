@@ -1,8 +1,5 @@
-{
-  "build": {
-    "builder": "dockerfile"
-  },
-  "deploy": {
-    "startCommand": "node server.js"
-  }
-}
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "node server.js"
